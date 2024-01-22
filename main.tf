@@ -25,3 +25,10 @@ resource "google_compute_instance" "default" {
     }
   }
 }
+resource "google_storage_bucket" "auto-expire" {
+  name          = "no-public-access-bucketttt"
+  location      = "US"
+  force_destroy = true
+
+  public_access_prevention = "enforced"
+}
